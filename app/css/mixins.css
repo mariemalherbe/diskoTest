@@ -1,0 +1,22 @@
+/* COLORS */
+/* FONTS */
+@font-face {
+  font-family: 'avenir-black';
+  src: url("../fonts/avenir/avenir-black/Avenir-LT-Std-95-Black.woff") format("woff"), url("../fonts/avenir/avenir-black/Avenir-LT-Std-95-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'avenir-heavy';
+  src: url("../fonts/avenirheavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'avenir';
+  src: url("../fonts/avenirregularr.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+/*MIXINS*/
+/*BREAKPOINTS*/

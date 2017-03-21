@@ -1,0 +1,63 @@
+/* COLORS */
+/* FONTS */
+@font-face {
+  font-family: 'avenir-black';
+  src: url("../fonts/avenir/avenir-black/Avenir-LT-Std-95-Black.woff") format("woff"), url("../fonts/avenir/avenir-black/Avenir-LT-Std-95-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'avenir-heavy';
+  src: url("../fonts/avenirheavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'avenir';
+  src: url("../fonts/avenirregularr.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+/*MIXINS*/
+/*BREAKPOINTS*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?9pro4y");
+  src: url("../fonts/icomoon.eot?9pro4y#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?9pro4y") format("truetype"), url("../fonts/icomoon.woff?9pro4y") format("woff"), url("../fonts/icomoon.svg?9pro4y#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 24pt;
+  color: #f87b68;
+  padding: 35px;
+  display: block;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-Lightning:before {
+  content: "\e900"; }
+
+.icon-Circles:before {
+  content: "\e901"; }
+
+.icon-Compass:before {
+  content: "\e902"; }
+
+.icon-Cards:before {
+  content: "\e903"; }
+
+.icon-Magic:before {
+  content: "\e904"; }
+
+.icon-Mag-Glass:before {
+  content: "\e905"; }

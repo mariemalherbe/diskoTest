@@ -1,0 +1,643 @@
+@import 'mixins';
+@import 'reset';
+@import 'icon';
+
+body{
+	color: white;
+	overflow-x: hidden;
+	font-family: 'avenir';
+	font-size: 12px;
+}
+
+header{
+	height: 60px;
+	position: fixed;
+	width: 100vw;
+	z-index: 4;
+
+	img{
+    	height: 35px;
+    	margin-top: 15px;
+	}
+	
+
+	h1{
+		float: left;
+		margin-left: 40px;
+	}
+	h2{
+		margin-left: 15px;
+		color: $orange;
+		font-size: 18pt;
+		line-height: 50px;
+		display: inline;
+	}
+
+	.menu{
+		float: right;
+		margin-right: 40px;
+		margin-top: 30px;
+		z-index: 6;
+		position: relative;
+		cursor: pointer;
+
+		.menu__line{
+		margin-bottom: 5px;
+		width: 20px;
+		height: 2px;
+		display: block;
+		background-color: #6a7a83;
+		border-radius: 20px;
+			&.long{
+				width: 25px;
+			}
+			&.court{
+				width: 15px;
+			}
+		}
+	}
+}
+
+
+
+.menu--open{
+	height: 100vh;
+	min-height: 100px;
+	background-color: white;
+	color: $orange;
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	transform: translateX(-100%);
+	width: 50%;
+	animation: close__burger 1s ease-in;
+
+	@include tablet{
+		width: 100%;
+	}
+
+	&.active{
+		animation: open__burger 1s ease-in;
+		transform: translateX(0%);
+	}
+
+
+	ul {
+		padding: 100px 10px; 
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		li{
+			margin-top: 50pt;
+			a{
+				text-decoration: none;
+				color: $orange;
+				font-size: 24pt;
+				&:hover{
+					text-decoration:line-through;
+				}
+			}
+		}
+	}
+}
+
+@keyframes open__burger{
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100%{
+		transform: translateX(0%);
+	}
+}
+
+@keyframes close__burger{
+	0% {
+		transform: translateX(0%);
+	}
+
+	100%{
+		transform: translateX(-100%);
+	}
+}
+
+.landingPage{
+	height: 1000px;
+    background-color: #232d3c;
+    background-image: url(../images/mountains.png);
+    background-size: cover;
+    background-position-y: 65%;
+    background-repeat: no-repeat;
+
+    img{
+    	position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    top: 50%;
+
+	    @include tablet{
+	    	width: 320px;
+	    }
+    }
+}
+
+.bloc__description{
+	background-color: $darkblue;
+	min-height: 820px;
+	position: relative;
+
+	@include tablet{
+		min-height: 1000px;
+	}
+
+	h1{
+		@include title($orange);
+		&:after{
+			background-color:white;
+		}
+	}
+	.text{
+		max-width: 700px;
+	    text-align: center;
+	    margin: 50px auto;
+	    line-height: 18px;
+	    letter-spacing: 1px;
+	    font-size: 11pt;
+	}
+
+	.social{
+		width: 500px;
+		margin: 0 auto;
+		@include tablet{
+			width: 320px;
+		}
+		ul{
+			 max-width: 500px;
+		    display: flex;
+		    justify-content: space-around;
+		    align-items: center;
+		    margin: 0 auto;
+		    position: relative;
+
+		li{
+			a{
+				img{
+					@include tablet{
+						width: 35px;
+					}
+				}
+			}
+		}
+
+		    @include tablet{
+		    	width: 320px;
+		    }
+		}
+	}
+
+	.template{
+		margin-top: 80px;
+		width: 35%;
+		z-index: 3;
+		display: block;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		position: absolute;
+
+		@include tablet{
+			width: 320px;
+		}
+	}
+}
+
+
+
+.bloc__projects{
+	position: relative;
+	z-index: 2;
+	
+
+	@include mindesktop{
+		min-height: 750px;
+		background-image: url('../images/ellipse.png');
+	background-size: 250px;
+	background-repeat: no-repeat;
+	background-position-x:100%; 
+	}
+
+	@include desktop{
+		min-height: 1200px;
+	}
+
+	@include tablet{
+		min-height: 900px;
+	}
+
+		&:before{
+		    content: '';
+    display: block;
+    width: 113%;
+    height: 467px;
+    top: -284px;
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    transform: rotate(-15deg);
+	    @include mindesktop{
+	    	display: none;
+	    }
+	     @include largedesktop{
+	 	display: none;
+	 } 
+	}
+
+	&:after{
+		content: '';
+    display: block;
+    width: 134%;
+    height: 438px;
+    top: 196px;
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    transform: rotate(15deg);
+    @include mindesktop{
+	    	display: none;
+	    }
+	 @include largedesktop{
+	 	display: none;
+	 }   
+	}
+
+
+	h1{
+		@include title(black);
+		max-width: 1000px;
+		&:after{
+			background-color: $orange;
+		}
+	}
+
+	img{
+		width: 35%;
+		margin-top: 100px;
+		margin-left: 150px;
+
+		@include desktop{
+			display: block;
+			margin: 50px auto 0px auto;
+		}
+	}
+
+	.bloc__text{
+		max-width: 350px;
+	    color: black;
+	    text-align: right;
+	    line-height: 18px;
+	    float: right;
+	    padding-top: 100px;
+	    margin-right: 150px;
+
+	    @include desktop{
+	    	float: none;
+	    	margin: 0 auto;
+	    	text-align: center;
+	    }
+	}
+
+	button{
+		clear: both;
+		float: right;
+		margin-right: 150px;
+		width: 145px;
+		height: 50px;
+		background-color: transparent;
+		border: 2px solid #e1e2ea;
+		color:$orange;
+		margin-top: -75px;
+		transition-duration: 0.5s;
+
+		&:hover{
+			background-color: $orange;
+			color: white;
+			border: none;
+		}
+
+		@include desktop{
+			float: none;
+			display: block;
+			margin: 50px auto;
+		}
+	}
+}
+
+.team{
+	margin-top: -200px;
+	background: -moz-linear-gradient(left, #f6606e 0%, #fa9961 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #f6606e 0%,#fa9961 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #f6606e 0%,#fa9961 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	h1{
+		@include title(white);
+		padding-top: 380px;
+		padding-bottom: 50px;
+		&:after{
+			background-color:$darkblue;
+		}
+	}
+
+	.team__container{
+		width: 75%;
+		margin: 0 auto;
+		text-align: center;
+		padding-bottom: 200px;
+		position: relative;
+
+		.team__portraits{
+			display: inline-table;
+			position: relative;
+			img{
+			width: 300px;
+			height: 300px;
+			}
+			h2{
+				font-size: 17pt;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			h3{
+				font-size: 17pt;
+				text-transform: uppercase;
+				font-family: 'avenir-heavy';
+			}
+			.team__function{
+				color: $darkblue;
+				padding-top: 10px;
+				display: block;
+			}
+		}
+	}
+ }
+
+ .timeLine{
+ 	background-color: $darkblue;
+ 	min-height: 2200px;
+
+ 	@include desktop{
+ 		min-height: 1700px;
+ 	}
+
+ 	h1{
+ 		@include title(white);
+ 		padding-top: 80px;
+ 		float: left;
+ 		margin-left: 100px;
+ 		@include desktop{
+ 			float: none;
+ 			margin-left: 0;
+ 		}
+ 		&:after{
+ 			background-color: $orange;
+
+ 		}
+ 	}
+
+ 	.timeline__img{
+ 		position: absolute;
+ 		left: 0;
+ 		right: 0;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		margin-top: -90px;
+ 		@include desktop{
+ 			display: none;
+ 		}
+ 	}
+
+ 	.timeLine__content{
+ 		max-width: 300px;
+ 		float: right;
+ 		clear: both;
+ 		margin-right: 150px;
+ 		line-height: 18px;
+ 		margin-top: 80px;
+ 		position: relative;
+
+ 		@include desktop{
+ 			float: none;
+ 			display: block;
+ 			margin: 100px auto;
+ 			text-align: center;
+ 			width: 320px;
+ 		}
+
+ 		&.--left{
+ 			float: left;
+ 			margin-left: 150px;
+ 			text-align: right;
+
+ 			@include desktop{
+ 			float: none;
+ 			display: block;
+ 			margin: 100px auto;
+ 			text-align: center;
+ 			width: 320px;
+ 			}
+ 		}
+
+ 		.title{
+ 			@include title(white);
+ 			font-size: 17pt;
+ 		}
+
+ 		.description{
+ 			margin-top: 25px;
+ 			@include tablet{
+ 				width: 320px;
+ 			}
+ 		}
+
+ 		a{
+ 			color: $orange;
+ 			text-decoration: none;
+ 			position: relative;
+ 			transition-duration: 0.5s;
+
+ 			&:hover{
+ 				color:white;
+ 				&:before{
+ 					right: -30px;
+ 					color: white;
+ 				}
+ 				&:after{
+ 					background-color: white;
+ 				}
+ 			}
+
+ 			&:before{
+ 				content:'→';
+ 				color: $orange;
+ 				display: inline-block;
+ 				position: absolute;
+ 				right: -18px;
+ 			}
+
+ 			&:after{
+ 				content:'';
+ 				width: 65px;
+ 				height: 1px;
+ 				position: absolute;
+ 				bottom: -1px;
+ 				display: block;
+ 				background-color: $orange;
+
+ 				@include desktop{
+ 					left: 0;
+ 				}
+
+ 				@include tablet{
+ 					display: none;
+ 				}
+ 			}
+ 		}
+
+ 		img{
+ 			width: 450px;
+ 			margin-top: 170px;
+
+ 			@include desktop{
+ 				width: 300px;
+ 				margin-top: 0px;
+ 			}
+ 		}
+
+ 		.date{
+ 			font-size: 45pt;
+ 			font-family: 'avenir-heavy';
+ 		}
+
+ 		.th{
+ 			position: absolute;
+ 			top: 20px;
+ 			font-family: 'avenir-heavy';
+ 			font-size: 12pt;
+ 		}
+
+ 		.month{
+ 			display: block;
+		    right: 0;
+		    font-size: 50pt;
+		    text-transform: uppercase;
+		    color: $orange;
+		    letter-spacing: 2px;
+ 		}
+ 	}
+ }
+
+.offer{
+	
+	h1{
+		@include title(black);
+		padding-top: 100px;
+		&:after{
+			background-color: $orange;
+		}
+	}
+
+		ul{
+			text-align: center;
+			max-width: 900px;
+			margin: 0 auto;
+			padding-top: 100px;
+
+			li{
+				position: relative;
+				display: inline-table;
+				color: $darkblue;
+				padding: 20px 10px;
+				width: 165px;
+				height: 180px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				border: solid 2px #f1f1f5;
+				border-radius: 3px;
+				box-shadow: 2px 0px 1px rgba(0,0,0,0.03);
+
+				.offer__title{
+					font-size: 17pt;
+					display: block;
+					font-family: 'avenir-heavy';
+					padding-bottom: 15px;
+				}
+
+				.offer__description{
+					letter-spacing: 1px;
+				}
+			}
+		}
+
+}
+
+footer{
+	padding-top: 200px;
+	color: $darkblue;
+	ul{
+		max-width: 500px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin: 0 auto;
+		position: relative; 
+
+		@include tablet{
+			justify-content: space-around;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 500px;
+			height: 2px;
+			background-color: #a7abb1;
+			position: absolute;
+			bottom: -15px;
+			@include tablet{
+				width: 300px;
+			}
+		}
+		li{
+			img{
+				@include tablet{
+					width: 45px;
+				}
+			}
+		}
+	}
+
+	.join_us{
+		margin: 0 auto;
+		display: block;
+		padding-top: 35px;
+	}
+
+	.footer__credits{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12pt;
+		text-transform: uppercase;
+		font-weight: 500;
+
+		span{
+			margin-left: 15px;
+		}
+	}
+}
+
