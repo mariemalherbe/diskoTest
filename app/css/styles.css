@@ -137,6 +137,9 @@ body {
   overflow-x: hidden;
   font-family: 'avenir';
   font-size: 12px; }
+  @media (min-width: 1025px) {
+    body {
+      font-size: 16px; } }
 
 header {
   height: 60px;
@@ -232,6 +235,9 @@ header {
     margin-left: auto;
     margin-right: auto;
     top: 50%; }
+    @media (min-width: 1025px) {
+      .landingPage img {
+        top: 25%; } }
     @media (max-width: 767px) {
       .landingPage img {
         width: 320px; } }
@@ -297,6 +303,9 @@ header {
     margin-left: auto;
     margin-right: auto;
     position: absolute; }
+    @media (min-width: 1025px) {
+      .bloc__description .template {
+        width: 15%; } }
     @media (max-width: 767px) {
       .bloc__description .template {
         width: 320px; } }
@@ -317,6 +326,9 @@ header {
   @media (max-width: 767px) {
     .bloc__projects {
       min-height: 900px; } }
+  @media (min-width: 1025px) {
+    .bloc__projects {
+      min-height: 1600px; } }
   .bloc__projects:before {
     content: '';
     display: block;
@@ -366,6 +378,9 @@ header {
       display: block;
       margin: 0 auto;
       margin-top: 10px; }
+    @media (min-width: 1025px) {
+      .bloc__projects h1 {
+        margin-top: 100px; } }
     .bloc__projects h1:after {
       background-color: #f87b68; }
   .bloc__projects img {
@@ -400,6 +415,9 @@ header {
     color: #f87b68;
     margin-top: -75px;
     transition-duration: 0.5s; }
+    @media (min-width: 1025px) {
+      .bloc__projects button {
+        margin-top: 100px; } }
     .bloc__projects button:hover {
       background-color: #f87b68;
       color: white;

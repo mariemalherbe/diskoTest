@@ -7,6 +7,10 @@ body{
 	overflow-x: hidden;
 	font-family: 'avenir';
 	font-size: 12px;
+
+	@include largedesktop{
+		font-size:16px;
+	}
 }
 
 header{
@@ -139,6 +143,10 @@ header{
 	    margin-right: auto;
 	    top: 50%;
 
+	    @include largedesktop{
+			top: 25%;
+		}
+
 	    @include tablet{
 	    	width: 320px;
 	    }
@@ -210,6 +218,10 @@ header{
 		margin-right: auto;
 		position: absolute;
 
+		@include largedesktop{
+			width: 15%;
+		}
+
 		@include tablet{
 			width: 320px;
 		}
@@ -231,12 +243,18 @@ header{
 	background-position-x:100%; 
 	}
 
+
+
 	@include desktop{
 		min-height: 1200px;
 	}
 
 	@include tablet{
 		min-height: 900px;
+	}
+
+	@include largedesktop{
+		min-height: 1600px;
 	}
 
 		&:before{
@@ -279,6 +297,9 @@ header{
 	h1{
 		@include title(black);
 		max-width: 1000px;
+		@include largedesktop{
+			margin-top: 100px;
+		}
 		&:after{
 			background-color: $orange;
 		}
@@ -293,6 +314,8 @@ header{
 			display: block;
 			margin: 50px auto 0px auto;
 		}
+
+		
 	}
 
 	.bloc__text{
@@ -322,6 +345,10 @@ header{
 		color:$orange;
 		margin-top: -75px;
 		transition-duration: 0.5s;
+
+		@include largedesktop{
+			margin-top: 100px;
+		}
 
 		&:hover{
 			background-color: $orange;
